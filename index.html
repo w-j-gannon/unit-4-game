@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector</title>
+    <link rel="icon" href="assets/images/ruby-gemstone.png">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+<body>
+    <!--navbar-->
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                <h4 class="text-white">William Gannon</h4>
+                <p class="text-muted">Crystal Collector Game created for the UT Coding Bootcamp.</p>
+                <p class="text-muted">Follow me by clicking the links!</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                <h4 class="text-white">Contact</h4>
+                <ul class="list-unstyled">
+                    <li><a href="https://w-j-gannon.github.io/Basic-Portfolio/" class="text-white">Portfolio</a></li>
+                    <li><a href="https://github.com/w-j-gannon" class="text-white">GitHub</a></li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <img src="assets/images/blue-crystal.svg" alt="crystal-logo" width="20" height="20">
+                <!--<svg xmlns="assets/images/red-crystal.svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>-->
+                <strong>  Game</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Jumbotron with Instructions-->
+    <div class="container">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Crystal Collector</h1>
+                <hr>
+                <p class="lead text-muted">Match the random Winning Score by choosing different crystals.</p>
+                <p class="lead text-muted">Each of the four crystals is assigned a random point total for each game. Click to discover!</p>
+                <p class="lead text-muted">All values will reset with each New Game.</p>
+                <p class="lead text-muted">Good Luck!</p>                
+            </div>
+        </section>
+        
+        <!--Main Section: 2 columns-->
+        <div class="row">
+
+            <!--Score Column-->
+            <div class="col-md-6 col-12">
+                
+                <!--Score to Win-->
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-6">Winning Score: <span id="targetScore"></span></h1>
+                    </div>
+                </div>
+                <!--Score-->
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-6">Current Score: <span id="counter"></span></h1>
+                    </div>
+                </div>
+                <!--Win/loss tally-->
+                <div class="card">
+                    <div class="card-body">
+                        <p><h2>Wins: <span id="wins"></span></h2></p>
+                        <p><h2>Losses: <span id="losses"></span></h2></p>
+                        <button class="btn btn-warning m-2" id="newGame" onclick="newGame()">New Game</button><button class="btn btn-danger m-2" id="resetScores" onclick="resetScores()">Reset Scores</button>
+                    </div>
+                </div>    
+            </div>
+
+            <!--Crystal Column-->
+            <div class="col-md-6 col-12">
+                <div class="row">
+                    <div class="col-6">
+                        <!--Red-->
+                        <img class="img-fluid m-4" id="crystal1" src="assets/images/red-crystal.svg">
+                    </div>
+                    <div class="col-6">
+                        <!--Blue-->
+                        <img class="img-fluid m-4" id="crystal2" src="assets/images/blue-crystal.svg">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <!--Orange-->
+                        <img class="img-fluid m-4" id="crystal3" src="assets/images/orange-crystal.svg">
+                    </div>
+                    <div class="col-6">
+                        <!--Green-->
+                        <img class="img-fluid m-4" id="crystal4" src="assets/images/green-crystal.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script> 
+</body>
+</html>
