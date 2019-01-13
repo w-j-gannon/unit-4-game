@@ -52,10 +52,10 @@
             <div class="container">
                 <h1 class="jumbotron-heading">Crystal Collector</h1>
                 <hr>
-                <p class="lead text-muted">Match the random Winning Score by choosing different crystals.</p>
+                <p class="lead text-muted">Match the Winning Score by choosing different crystals.</p>
                 <p class="lead text-muted">Each of the four crystals is assigned a random point total for each game. Click to discover!</p>
                 <p class="lead text-muted">All values will reset with each New Game.</p>
-                <p class="lead text-muted">Good Luck!</p>                
+                <p class="lead text-muted">Stumped? Try a New Number. Good Luck!</p>                
             </div>
         </section>
         
@@ -71,42 +71,46 @@
                         <h1 class="display-6">Winning Score: <span id="targetScore"></span></h1>
                     </div>
                 </div>
+
                 <!--Score-->
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h1 class="display-6">Current Score: <span id="counter"></span></h1>
                     </div>
                 </div>
-                <!--Win/loss tally-->
+
+                <!--Win/loss tally plus button-->
                 <div class="card">
                     <div class="card-body">
                         <p><h2>Wins: <span id="wins"></span></h2></p>
                         <p><h2>Losses: <span id="losses"></span></h2></p>
-                        <button class="btn btn-warning m-2" id="newGame" onclick="newGame()">New Game</button><button class="btn btn-danger m-2" id="resetScores" onclick="resetScores()">Reset Scores</button>
+                        <!--Button-->
+                        <button class="btn btn-info m-2" id="newNumber">New Number</button>
+                        <button class="btn btn-warning m-2" id="resetPoints">Reset Points</button>
                     </div>
                 </div>    
             </div>
 
-            <!--Crystal Column-->
+            <!--Crystal Column, images from flaticon-->
             <div class="col-md-6 col-12">
                 <div class="row">
                     <div class="col-6">
                         <!--Red-->
-                        <img class="img-fluid m-4" id="crystal1" src="assets/images/red-crystal.svg">
+                        <img class="img-fluid m-4" id="red" src="assets/images/red-crystal.svg">
                     </div>
                     <div class="col-6">
                         <!--Blue-->
-                        <img class="img-fluid m-4" id="crystal2" src="assets/images/blue-crystal.svg">
+                        <img class="img-fluid m-4" id="blue" src="assets/images/blue-crystal.svg">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <!--Orange-->
-                        <img class="img-fluid m-4" id="crystal3" src="assets/images/orange-crystal.svg">
+                        <img class="img-fluid m-4" id="orange" src="assets/images/orange-crystal.svg">
                     </div>
                     <div class="col-6">
                         <!--Green-->
-                        <img class="img-fluid m-4" id="crystal4" src="assets/images/green-crystal.svg">
+                        <img class="img-fluid m-4" id="green" src="assets/images/green-crystal.svg">
                     </div>
                 </div>
             </div>
